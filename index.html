@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="shortcut icon" href="">
-    <script type='text/javascript'>
-    	var web3 = new Web3(web3.currentProvider);
-    	const address = '0x692a70d2e424a56d2c6c27aa97d1a86395877b3a';
-    	const abi = [
-            	{
-            		"constant": true,
-            		"inputs": [],
-            		"name": "getMembers",
-            		"outputs": [
-            			{
-            				"name": "",
-            				"type": "uint256"
-            			}
-            		],
-            		"payable": false,
-            		"stateMutability": "view",
-            		"type": "function"
-            	}
+	<head>
+		<link rel="shortcut icon" href="">
+		<script type='text/javascript'>
+			var web3 = new Web3(web3.currentProvider);
+			const address = '0x692a70d2e424a56d2c6c27aa97d1a86395877b3a';
+			const abi = [
+				{
+					"constant": true,
+					"inputs": [],
+					"name": "getMembers",
+					"outputs": [
+						{
+							"name": "",
+							"type": "uint256"
+						}
+					],
+					"payable": false,
+					"stateMutability": "view",
+					"type": "function"
+				}
 			];
+
 			var contract = web3.eth.contract(abi);
 			var auction = contract.at(address);
 			auction.getMembers.call(function(e, r) {
-		               console.log(r);
+				console.log(r);
 			});
 		</script>
-</head>
+	</head>
 
-<body>
-	<h1>Your Page</h1>
-</body>
+	<body>
+		<h1>Your Page</h1>
+	</body>
 </html>
